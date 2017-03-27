@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -10,9 +9,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'cli-universal-demo'}),
-    FormsModule,
-    HttpModule
+    BrowserModule.withServerTransition({ appId: 'cli-universal-demo' }),
+    RouterModule.forRoot([
+      { path: '', loadChildren: './home/home.module#HomeModule' },
+      { path: '**', redirectTo: '', pathMatch: 'full' },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
