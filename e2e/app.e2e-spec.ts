@@ -7,8 +7,8 @@ describe('cli-universal-demo App', () => {
     page = new CliUniversalDemoPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying home-page works!', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual(<any>'home-page works!');
   });
 });
