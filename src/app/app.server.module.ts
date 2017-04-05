@@ -2,8 +2,7 @@
 
 import { NgModule, NgModuleFactory, NgModuleFactoryLoader } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
-import { AppModule } from './app.module';
-import { AppComponent } from './app.component';
+import { AppModule, AppComponent, TitleComponent, MetaDescriptionComponent } from './app.module';
 
 export class ServerFactoryLoader extends NgModuleFactoryLoader {
   load(path: string): Promise<NgModuleFactory<any>> {
@@ -20,7 +19,7 @@ export class ServerFactoryLoader extends NgModuleFactoryLoader {
     ServerModule,
     AppModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, TitleComponent, MetaDescriptionComponent],
   providers: [
     { provide: NgModuleFactoryLoader, useClass: ServerFactoryLoader }
   ]
