@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prestart": "ng build --prod && ngc",
-    "start": "ts-node src/server.ts"
+    "prestart": "ng build --prod && ngc && webpack",
+    "start": "node dist/server.js"
   },
   "private": true,
   "dependencies": {
@@ -38,8 +38,10 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.1",
+    "ts-loader": "^2.0.3",
     "ts-node": "^3.0.2",
-    "tslint": "~4.5.1",
-    "typescript": "~2.2.1"
+    "tslint": "~5.0.0",
+    "typescript": "~2.2.2",
+    "webpack": "^2.2.0"
   }
 }
