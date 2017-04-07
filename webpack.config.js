@@ -1,4 +1,5 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: {
@@ -8,6 +9,7 @@ module.exports = {
     extensions: ['.ts', '.js']
   },
   target: 'node',
+  externals: [nodeExternals()],
   node: {
     __dirname: true
   },
