@@ -1,0 +1,8 @@
+@import "../../../sass/vars";
+
+:host {
+  display: block;
+  padding: 20px;
+  background-color: $color-white;
+  color: $color-orange;
+}

@@ -1,5 +1,7 @@
 @import "../sass/vars";
 
 :host {
-  color: $color-blue;
+  display: block;
+  padding: 30px;
+  background-color: $color-gainsboro ;
 }

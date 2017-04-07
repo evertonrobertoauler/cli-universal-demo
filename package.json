@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prestart": "ng build --prod && ngc && webpack",
+    "prestart": "ng build --prod && gulp before:ngc && ngc && gulp after:ngc && webpack",
     "start": "node dist/server.js"
   },
   "private": true,
