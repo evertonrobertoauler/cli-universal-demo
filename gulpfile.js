@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const rename = require("gulp-rename");
 const clean = require('gulp-clean');
-const sequence = require('gulp-sequence')
+const sequence = require('gulp-sequence');
 
 gulp.task('sass', () => {
   return gulp.src('./src/app/**/*.scss')
@@ -28,7 +28,7 @@ gulp.task('rename:bkp:scss', () => {
     .pipe(gulp.dest('./src/app'));
 });
 
-gulp.task('clean', function () {
+gulp.task('clean', () => {
   return gulp.src(['./src/app/**/*.scssbkp', './src/app/**/*.css'], { read: false })
     .pipe(clean());
 });

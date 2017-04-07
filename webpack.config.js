@@ -9,7 +9,11 @@ module.exports = {
     extensions: ['.ts', '.js']
   },
   target: 'node',
-  externals: [nodeExternals()],
+   externals: [nodeExternals({
+     whitelist: [
+       /^@angular\/material/
+     ]
+   })],
   node: {
     __dirname: true
   },
