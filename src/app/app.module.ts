@@ -3,16 +3,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TitleComponent } from './title.component';
-import { MetaDescriptionComponent } from './meta-description.component';
 
-export { AppComponent, TitleComponent, MetaDescriptionComponent };
+export { AppComponent };
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TitleComponent,
-    MetaDescriptionComponent
+    AppComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'cli-universal-demo' }),
@@ -22,7 +18,8 @@ export { AppComponent, TitleComponent, MetaDescriptionComponent };
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ])
   ],
+  exports: [AppComponent],
   providers: [],
-  bootstrap: [AppComponent, TitleComponent, MetaDescriptionComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
