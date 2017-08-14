@@ -4,7 +4,6 @@
 /dist
 /tmp
 /out-tsc
-yarn*
 
 # dependencies
 /node_modules
@@ -24,7 +23,6 @@ yarn*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history
 
 # misc
 /.sass-cache
@@ -34,6 +32,7 @@ yarn*
 npm-debug.log
 testem.log
 /typings
+yarn-error.log
 
 # e2e
 /e2e/*.js

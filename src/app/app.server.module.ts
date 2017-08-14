@@ -1,27 +1,18 @@
-/// <reference types="node" />
-
-import { NgModule, NgModuleFactory, NgModuleFactoryLoader } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
-import { AppModule, AppComponent } from './app.module';
 
-export class ServerFactoryLoader extends NgModuleFactoryLoader {
-  load(path: string): Promise<NgModuleFactory<any>> {
-    return new Promise((resolve, reject) => {
-      const [file, className] = path.split('#');
-      const classes = require('../../dist/ngfactory/src/app' + file.slice(1) + '.ngfactory');
-      resolve(classes[className + 'NgFactory']);
-    });
-  }
-}
+import { AppModule } from './app.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
+    // The AppServerModule should import your AppModule followed
+    // by the ServerModule from @angular/platform-server.
+    AppModule,
     ServerModule,
-    AppModule
   ],
+  // Since the bootstrapped component is not inherited from your
+  // imported AppModule, it needs to be repeated here.
   bootstrap: [AppComponent],
-  providers: [
-    { provide: NgModuleFactoryLoader, useClass: ServerFactoryLoader }
-  ]
 })
 export class AppServerModule { }

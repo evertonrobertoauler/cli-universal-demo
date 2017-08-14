@@ -1,22 +1,17 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: {
     server: './src/server.ts'
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
+    alias: {
+      'main.server': path.join(__dirname, 'dist', 'server', 'main.bundle.js')
+    }
   },
   target: 'node',
-   externals: [nodeExternals({
-     whitelist: [
-       /^@angular\/material/
-     ]
-   })],
-  node: {
-    __dirname: true
-  },
+  externals: [/(node_modules|main\..*\.js)/],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js'
