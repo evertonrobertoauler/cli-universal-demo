@@ -25,7 +25,6 @@
     "@angular/platform-browser-dynamic": "next",
     "@angular/platform-server": "next",
     "@angular/router": "next",
-    "angular-universal-express": "^0.0.3",
     "core-js": "^2.5.0",
     "express": "^4.15.4",
     "rxjs": "^5.4.3",
