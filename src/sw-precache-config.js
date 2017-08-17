@@ -4,7 +4,7 @@ module.exports = {
   ],
   stripPrefix: 'dist/browser',
   runtimeCaching: [{
-    urlPattern: '/',
+    urlPattern: /(\/|\/about)$/,
     handler: 'networkFirst'
   }]
 };
